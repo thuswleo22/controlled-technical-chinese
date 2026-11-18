@@ -1,0 +1,132 @@
+{
+  "summary": {
+    "raw": {
+      "cases": 5,
+      "unique": 3,
+      "unique_correct": 2,
+      "logic_precision": 0.5714285714285714,
+      "logic_recall": 0.8,
+      "codepoints": 73
+    },
+    "edited": {
+      "cases": 5,
+      "unique": 5,
+      "unique_correct": 4,
+      "logic_precision": 0.8,
+      "logic_recall": 0.8,
+      "codepoints": 78
+    }
+  },
+  "rows": [
+    {
+      "id": "api-exclusive",
+      "genre": "API",
+      "variant": "raw",
+      "parse_trees": 1,
+      "interpretations": 1,
+      "gold_found": false,
+      "unique_correct": false,
+      "candidate_precision": 0.0,
+      "codepoints": 9
+    },
+    {
+      "id": "api-exclusive",
+      "genre": "API",
+      "variant": "edited",
+      "parse_trees": 1,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 10
+    },
+    {
+      "id": "api-inclusive",
+      "genre": "API",
+      "variant": "raw",
+      "parse_trees": 1,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 9
+    },
+    {
+      "id": "api-inclusive",
+      "genre": "API",
+      "variant": "edited",
+      "parse_trees": 1,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 9
+    },
+    {
+      "id": "ops-guard",
+      "genre": "操作",
+      "variant": "raw",
+      "parse_trees": 2,
+      "interpretations": 2,
+      "gold_found": true,
+      "unique_correct": false,
+      "candidate_precision": 0.5,
+      "codepoints": 18
+    },
+    {
+      "id": "ops-guard",
+      "genre": "操作",
+      "variant": "edited",
+      "parse_trees": 1,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 20
+    },
+    {
+      "id": "ops-wrong",
+      "genre": "操作",
+      "variant": "raw",
+      "parse_trees": 2,
+      "interpretations": 2,
+      "gold_found": true,
+      "unique_correct": false,
+      "candidate_precision": 0.5,
+      "codepoints": 18
+    },
+    {
+      "id": "ops-wrong",
+      "genre": "操作",
+      "variant": "edited",
+      "parse_trees": 1,
+      "interpretations": 1,
+      "gold_found": false,
+      "unique_correct": false,
+      "candidate_precision": 0.0,
+      "codepoints": 20
+    },
+    {
+      "id": "arch-parity",
+      "genre": "架构",
+      "variant": "raw",
+      "parse_trees": 2,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 19
+    },
+    {
+      "id": "arch-parity",
+      "genre": "架构",
+      "variant": "edited",
+      "parse_trees": 2,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 19
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "summary": {
+    "raw": {
+      "cases": 7,
+      "unique": 2,
+      "unique_correct": 2,
+      "logic_precision": 0.5833333333333334,
+      "logic_recall": 1.0,
+      "codepoints": 104
+    },
+    "edited": {
+      "cases": 7,
+      "unique": 7,
+      "unique_correct": 6,
+      "logic_precision": 0.8571428571428571,
+      "logic_recall": 0.8571428571428571,
+      "codepoints": 114
+    }
+  },
+  "rows": [
+    {
+      "id": "api-1",
+      "genre": "API",
+      "variant": "raw",
+      "parse_trees": 2,
+      "interpretations": 2,
+      "gold_found": true,
+      "unique_correct": false,
+      "candidate_precision": 0.5,
+      "codepoints": 14
+    },
+    {
+      "id": "api-1",
+      "genre": "API",
+      "variant": "edited",
+      "parse_trees": 1,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 16
+    },
+    {
+      "id": "arch-1",
+      "genre": "架构",
+      "variant": "raw",
+      "parse_trees": 2,
+      "interpretations": 2,
+      "gold_found": true,
+      "unique_correct": false,
+      "candidate_precision": 0.5,
+      "codepoints": 17
+    },
+    {
+      "id": "arch-1",
+      "genre": "架构",
+      "variant": "edited",
+      "parse_trees": 1,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 19
+    },
+    {
+      "id": "ops-1",
+      "genre": "操作",
+      "variant": "raw",
+      "parse_trees": 2,
+      "interpretations": 2,
+      "gold_found": true,
+      "unique_correct": false,
+      "candidate_precision": 0.5,
+      "codepoints": 15
+    },
+    {
+      "id": "ops-1",
+      "genre": "操作",
+      "variant": "edited",
+      "parse_trees": 1,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 17
+    },
+    {
+      "id": "safety-1",
+      "genre": "安全",
+      "variant": "raw",
+      "parse_trees": 2,
+      "interpretations": 2,
+      "gold_found": true,
+      "unique_correct": false,
+      "candidate_precision": 0.5,
+      "codepoints": 14
+    },
+    {
+      "id": "safety-1",
+      "genre": "安全",
+      "variant": "edited",
+      "parse_trees": 1,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 16
+    },
+    {
+      "id": "control-1",
+      "genre": "安全",
+      "variant": "raw",
+      "parse_trees": 2,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 14
+    },
+    {
+      "id": "control-1",
+      "genre": "安全",
+      "variant": "edited",
+      "parse_trees": 2,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 14
+    },
+    {
+      "id": "control-2",
+      "genre": "API",
+      "variant": "raw",
+      "parse_trees": 1,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 16
+    },
+    {
+      "id": "control-2",
+      "genre": "API",
+      "variant": "edited",
+      "parse_trees": 1,
+      "interpretations": 1,
+      "gold_found": true,
+      "unique_correct": true,
+      "candidate_precision": 1.0,
+      "codepoints": 16
+    },
+    {
+      "id": "negative-1",
+      "genre": "操作",
+      "variant": "raw",
+      "parse_trees": 2,
+      "interpretations": 2,
+      "gold_found": true,
+      "unique_correct": false,
+      "candidate_precision": 0.5,
+      "codepoints": 14
+    },
+    {
+      "id": "negative-1",
+      "genre": "操作",
+      "variant": "edited",
+      "parse_trees": 1,
+      "interpretations": 1,
+      "gold_found": false,
+      "unique_correct": false,
+      "candidate_precision": 0.0,
+      "codepoints": 16
+    }
+  ]
+}

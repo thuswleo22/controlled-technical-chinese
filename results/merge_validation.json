@@ -1,0 +1,288 @@
+{
+  "independent_cases": 27,
+  "summary": {
+    "RULE-LOG-02": {
+      "tp": 3,
+      "tn": 6,
+      "fp": 0,
+      "fn": 0
+    },
+    "RULE-QNT-01": {
+      "tp": 3,
+      "tn": 6,
+      "fp": 0,
+      "fn": 0
+    },
+    "RULE-REF-02": {
+      "tp": 3,
+      "tn": 6,
+      "fp": 0,
+      "fn": 0
+    }
+  },
+  "enumerated_intervals": 128,
+  "interval_mismatches": [],
+  "rows": [
+    {
+      "id": "qnt-reversed",
+      "text": "范围：温度大于30摄氏度且小于20摄氏度。",
+      "rule": "RULE-QNT-01",
+      "expect": true,
+      "why": "同一温度不可能同时满足逆序上下界。",
+      "prediction": true,
+      "diagnostic_lines": [
+        1
+      ]
+    },
+    {
+      "id": "qnt-open-endpoint",
+      "text": "阈值：压力>2MPa且<=2MPa。",
+      "rule": "RULE-QNT-01",
+      "expect": true,
+      "why": "同端点只有上界闭合，区间仍为空。",
+      "prediction": true,
+      "diagnostic_lines": [
+        1
+      ]
+    },
+    {
+      "id": "qnt-closed-point",
+      "text": "范围：电压大于或等于5伏且小于或等于5伏。",
+      "rule": "RULE-QNT-01",
+      "expect": false,
+      "why": "闭合的同端点区间包含5伏。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "qnt-valid-ascii",
+      "text": "阈值：电流>=0A AND <10A。",
+      "rule": "RULE-QNT-01",
+      "expect": false,
+      "why": "零至10安培的左闭右开区间非空。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "qnt-two-open-point",
+      "text": "范围：延迟>1ms且<1ms。",
+      "rule": "RULE-QNT-01",
+      "expect": true,
+      "why": "两个开放端点相同，不包含任何值。",
+      "prediction": true,
+      "diagnostic_lines": [
+        1
+      ]
+    },
+    {
+      "id": "qnt-different-units",
+      "text": "范围：延迟大于1秒且小于200毫秒。",
+      "rule": "RULE-QNT-01",
+      "expect": false,
+      "why": "单位不同，超出本轮同单位判定范围。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "qnt-outside-label",
+      "text": "实验温度大约为20摄氏度，短时误差可能达到2摄氏度。",
+      "rule": "RULE-QNT-01",
+      "expect": false,
+      "why": "正文测量近似值没有范围或阈值标签。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "qnt-unknown-symbol",
+      "text": "范围：温度≳30摄氏度且≲20摄氏度。",
+      "rule": "RULE-QNT-01",
+      "expect": false,
+      "why": "近似关系符号超出所支持的比较语法。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "qnt-different-scalars",
+      "text": "范围：温度大于30摄氏度且湿度小于20摄氏度。",
+      "rule": "RULE-QNT-01",
+      "expect": false,
+      "why": "两个比较的量不同，不能作为一个区间。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "ref-dangling-gaai",
+      "text": "动作：保存该。",
+      "rule": "RULE-REF-02",
+      "expect": true,
+      "why": "该后直接为句号，没有受指对象。",
+      "prediction": true,
+      "diagnostic_lines": [
+        1
+      ]
+    },
+    {
+      "id": "ref-dangling-above",
+      "text": "措施：记录上述",
+      "rule": "RULE-REF-02",
+      "expect": true,
+      "why": "上述在行末悬空。",
+      "prediction": true,
+      "diagnostic_lines": [
+        1
+      ]
+    },
+    {
+      "id": "ref-dangling-comma",
+      "text": "动作：先记录该，然后通知值班员。",
+      "rule": "RULE-REF-02",
+      "expect": true,
+      "why": "该后直接为逗号。",
+      "prediction": true,
+      "diagnostic_lines": [
+        1
+      ]
+    },
+    {
+      "id": "ref-valid-noun",
+      "text": "动作：保存该请求。",
+      "rule": "RULE-REF-02",
+      "expect": false,
+      "why": "该明确修饰请求。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "ref-quoted-term",
+      "text": "动作：记录“该”。",
+      "rule": "RULE-REF-02",
+      "expect": false,
+      "why": "该作为被引用的词条出现。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "ref-code-term",
+      "text": "措施：写入 `上述`。",
+      "rule": "RULE-REF-02",
+      "expect": false,
+      "why": "上述只在代码字面量中。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "ref-outside-field",
+      "text": "说明：示例中最后一个词为该。",
+      "rule": "RULE-REF-02",
+      "expect": false,
+      "why": "说明字段超出受控动作和措施范围。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "ref-proper-name",
+      "text": "动作：记录公司名称「上述」。",
+      "rule": "RULE-REF-02",
+      "expect": false,
+      "why": "带引号的名称属于引用文字。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "ref-above-noun",
+      "text": "措施：复核上述两份报告。",
+      "rule": "RULE-REF-02",
+      "expect": false,
+      "why": "上述修饰数量明确的报告。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "log-missing-close",
+      "text": "如果（压力合格或旁路打开且急停可用，启动设备。",
+      "rule": "RULE-LOG-02",
+      "expect": true,
+      "why": "条件中的全角左括号没有闭合。",
+      "prediction": true,
+      "diagnostic_lines": [
+        1
+      ]
+    },
+    {
+      "id": "log-wrong-pair",
+      "text": "若（压力合格或旁路打开)且急停可用，启动设备。",
+      "rule": "RULE-LOG-02",
+      "expect": true,
+      "why": "全角左括号与ASCII右括号不配对。",
+      "prediction": true,
+      "diagnostic_lines": [
+        1
+      ]
+    },
+    {
+      "id": "log-extra-close",
+      "text": "当压力合格）且急停可用时，启动设备。",
+      "rule": "RULE-LOG-02",
+      "expect": true,
+      "why": "右括号没有对应的左括号。",
+      "prediction": true,
+      "diagnostic_lines": [
+        1
+      ]
+    },
+    {
+      "id": "log-ascii-balanced",
+      "text": "如果(压力合格或旁路打开)且急停可用，启动设备。",
+      "rule": "RULE-LOG-02",
+      "expect": false,
+      "why": "条件中的ASCII括号配对完整。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "log-nested-balanced",
+      "text": "若（压力合格且(急停可用或旁路关闭)），启动设备。",
+      "rule": "RULE-LOG-02",
+      "expect": false,
+      "why": "嵌套的两种括号均按相同类型闭合。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "log-quoted-bracket",
+      "text": "如果显示“测试(完成”，记录状态。",
+      "rule": "RULE-LOG-02",
+      "expect": false,
+      "why": "不配对的左括号位于引用的显示文字中。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "log-code-bracket",
+      "text": "当返回值为 `(pending` 时，继续等待。",
+      "rule": "RULE-LOG-02",
+      "expect": false,
+      "why": "代码字面量内部不参加括号判定。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "log-outside-condition",
+      "text": "显示名称为测试(完成。",
+      "rule": "RULE-LOG-02",
+      "expect": false,
+      "why": "该句没有支持的条件起始词。",
+      "prediction": false,
+      "diagnostic_lines": []
+    },
+    {
+      "id": "log-fenced-condition",
+      "text": "```text\n如果（压力合格，启动设备。\n```",
+      "rule": "RULE-LOG-02",
+      "expect": false,
+      "why": "整个条件例句位于代码围栏内。",
+      "prediction": false,
+      "diagnostic_lines": []
+    }
+  ]
+}

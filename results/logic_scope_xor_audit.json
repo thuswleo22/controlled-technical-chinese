@@ -1,0 +1,19 @@
+{
+  "counts": {
+    "raw": {
+      "tn": 117,
+      "tp": 126
+    },
+    "left": {
+      "tn": 243
+    },
+    "right": {
+      "tn": 243
+    },
+    "wrapped": {
+      "tn": 117,
+      "tp": 126
+    }
+  },
+  "mismatches": []
+}

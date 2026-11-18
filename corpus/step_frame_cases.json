@@ -1,0 +1,111 @@
+[
+  {
+    "id": "empty-title-valid",
+    "text": "步骤：\n执行者：值班员\n动作：暂停作业",
+    "expect": false,
+    "rule": "RULE-REF-01",
+    "kind": "synthetic",
+    "why": "步骤标记可以不写题名。执行者和动作完整。",
+    "frame": {
+      "actor": "值班员",
+      "action": "暂停作业",
+      "condition": null
+    }
+  },
+  {
+    "id": "actor-blank",
+    "text": "步骤：停机\n执行者：   \n动作：停止泵",
+    "expect": true,
+    "rule": "RULE-REF-01",
+    "kind": "synthetic",
+    "why": "仅含空白的执行者值为空。"
+  },
+  {
+    "id": "action-omitted",
+    "text": "步骤：停机\n执行者：值班员",
+    "expect": true,
+    "rule": "RULE-REF-01",
+    "kind": "synthetic",
+    "why": "步骤块没有动作字段。"
+  },
+  {
+    "id": "condition-empty",
+    "text": "步骤：停机\n条件：\n执行者：值班员\n动作：停止泵",
+    "expect": true,
+    "rule": "RULE-REF-01",
+    "kind": "synthetic",
+    "why": "若声明条件字段，则须写明可判定的条件。"
+  },
+  {
+    "id": "condition-after-actor",
+    "text": "步骤：停机\n执行者：值班员\n条件：压力达到上限\n动作：停止泵",
+    "expect": true,
+    "rule": "RULE-REF-01",
+    "kind": "synthetic",
+    "why": "条件字段只能出现在执行者之前。"
+  },
+  {
+    "id": "duplicate-actor",
+    "text": "步骤：停机\n执行者：值班员\n执行者：维修员\n动作：停止泵",
+    "expect": true,
+    "rule": "RULE-REF-01",
+    "kind": "synthetic",
+    "why": "两个执行者字段违反字段唯一性。"
+  },
+  {
+    "id": "blank-split",
+    "text": "步骤：停机\n执行者：值班员\n\n动作：停止泵",
+    "expect": true,
+    "rule": "RULE-REF-01",
+    "kind": "synthetic",
+    "why": "空行后的动作无法补齐前一个步骤。"
+  },
+  {
+    "id": "heading-split",
+    "text": "步骤：停机\n执行者：值班员\n## 附录\n动作：停止泵",
+    "expect": true,
+    "rule": "RULE-REF-01",
+    "kind": "synthetic",
+    "why": "标题后的动作不能计入前一个步骤。"
+  },
+  {
+    "id": "list-item-split",
+    "text": "- 步骤：停机\n  执行者：值班员\n- 动作：停止泵",
+    "expect": true,
+    "rule": "RULE-REF-01",
+    "kind": "synthetic",
+    "why": "后一个列表项不能补齐前一个步骤。"
+  },
+  {
+    "id": "next-step-split",
+    "text": "步骤：暂停作业\n执行者：值班员\n步骤：保存日志\n执行者：运维代理\n动作：保存日志",
+    "expect": true,
+    "rule": "RULE-REF-01",
+    "kind": "synthetic",
+    "why": "新步骤标记终止上一个步骤。两个步骤的动作不能相互补用。"
+  },
+  {
+    "id": "unknown-role-format-only",
+    "text": "步骤：批准访问\n执行者：待定\n动作：批准数据导出",
+    "expect": false,
+    "rule": "RULE-REF-01",
+    "kind": "synthetic",
+    "why": "待定具有非空文本。结构检查无法确认责任方实际存在。"
+  },
+  {
+    "id": "quoted-block-control",
+    "text": "> 步骤：停机\n> 动作：停止泵",
+    "expect": false,
+    "rule": "RULE-REF-01",
+    "kind": "synthetic",
+    "why": "Markdown 引用中的缺字段示例不参与检查。"
+  },
+  {
+    "id": "fenced-block-control",
+    "text": "```text\n步骤：停机\n动作：停止泵\n```",
+    "expect": false,
+    "rule": "RULE-REF-01",
+    "kind": "synthetic",
+    "why": "围栏代码中的缺字段示例不参与检查。"
+  }
+]

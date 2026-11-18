@@ -1,0 +1,7 @@
+[
+  {"id":"api-exclusive","genre":"API","raw":"令牌有效或证书有效","edited":"令牌有效异或证书有效","gold_truth":"0110"},
+  {"id":"api-inclusive","genre":"API","raw":"令牌有效或证书有效","edited":"令牌有效或证书有效","gold_truth":"0111"},
+  {"id":"ops-guard","genre":"操作","raw":"主通道启用异或备用通道启用且联锁解除","edited":"（主通道启用异或备用通道启用）且联锁解除","gold_truth":"00010100"},
+  {"id":"ops-wrong","genre":"操作","raw":"主通道启用异或备用通道启用且联锁解除","edited":"主通道启用异或（备用通道启用且联锁解除）","gold_truth":"00010100"},
+  {"id":"arch-parity","genre":"架构","raw":"甲节点投票异或乙节点投票异或丙节点投票","edited":"甲节点投票异或乙节点投票异或丙节点投票","gold_truth":"01101001"}
+]

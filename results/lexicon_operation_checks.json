@@ -1,0 +1,52 @@
+{
+  "engine": "SQLite, OpenSSL and bytes",
+  "operations": [
+    {
+      "word": "索引",
+      "before_index_search": false,
+      "after_index_search": true,
+      "control_without_index": true,
+      "passed": true
+    },
+    {
+      "word": "过滤",
+      "source_rows": 100,
+      "selected_rows": 33,
+      "identity_returns_unmatched_records": true,
+      "passed": true
+    },
+    {
+      "word": "统计",
+      "observation": 33,
+      "different_representation": true,
+      "copying_ids_is_not_count": true,
+      "passed": true
+    },
+    {
+      "word": "未锁定",
+      "reader_before_write_lock": true,
+      "other_writer_denied_while_held": true,
+      "other_writer_after_release": true,
+      "passed": true
+    },
+    {
+      "word": "回收",
+      "more_reusable_pages_after_drop": true,
+      "read_only_did_not_reclaim": true,
+      "passed": true
+    },
+    {
+      "word": "签名",
+      "authentic_message_verified": true,
+      "changed_message_verified": false,
+      "passed": true
+    },
+    {
+      "word": "截断",
+      "length": 8,
+      "prefix_hex": "6162636465666768",
+      "same_length_suffix_is_counterexample": true,
+      "passed": true
+    }
+  ]
+}

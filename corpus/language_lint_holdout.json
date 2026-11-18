@@ -1,0 +1,146 @@
+[
+  {
+    "id": "holdout-lex-handoff",
+    "text": "完整性检查通过后，运维代理将坏块清单拷贝至审计目录。",
+    "rule": "RULE-LEX-01",
+    "expect": true,
+    "why": "「拷贝」支配坏块清单，表示复制数据。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-lex-inline-path",
+    "text": "运维代理拷贝 `/var/lib/app/index.db`，并验证目标文件。",
+    "rule": "RULE-LEX-01",
+    "expect": true,
+    "why": "内联代码标记的是被复制文件。该标记未把动词置于代码中。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-lex-noun",
+    "text": "每个作业保留一份只读拷贝，供审计员复核。",
+    "rule": "RULE-LEX-01",
+    "expect": false,
+    "why": "量词「一份」修饰名词「拷贝」，其指代现有副本。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-lex-ui-label",
+    "text": "点击工具栏的「批量拷贝」按钮，然后查看任务状态。",
+    "rule": "RULE-LEX-01",
+    "expect": false,
+    "why": "引号内是界面标签。指令中的实际动作是点击。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-lex-model-name",
+    "text": "拷贝服务的状态页面将 CopyManager 标为等待中。",
+    "rule": "RULE-LEX-01",
+    "expect": false,
+    "why": "「拷贝」是组件名称的一部分。句子描述状态页面。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-lex-code-block",
+    "text": "~~~~text\n运维代理将坏块清单拷贝至审计目录。\n~~~~\n系统随后校验文件摘要。",
+    "rule": "RULE-LEX-01",
+    "expect": false,
+    "why": "围栏内为样例文本。围栏外仅有校验动作。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-mor-handoff",
+    "text": "网关对批次数据进行编码，再将结果交给签名器。",
+    "rule": "RULE-LEX-02",
+    "expect": true,
+    "why": "「对批次数据」和「进行编码」共享同一个谓词。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-mor-inline-field",
+    "text": "客户端先对 `payload` 进行编码。随后，客户端写入长度字段。",
+    "rule": "RULE-LEX-02",
+    "expect": true,
+    "why": "内联字段仍是编码对象。动作表达式位于普通正文。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-mor-isolated-stage",
+    "text": "如果响应体超过限制，代理对响应体进行编码。",
+    "rule": "RULE-LEX-02",
+    "expect": true,
+    "why": "条件从句明确结束。后半句含一个完整的目标谓词。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-mor-embedded-prior",
+    "text": "解码器对已经进行编码的载荷进行校验。",
+    "rule": "RULE-LEX-02",
+    "expect": false,
+    "why": "「已经进行编码的」修饰载荷。句子的「对」引出校验对象。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-mor-two-predicates",
+    "text": "探测器对码表进行完整性检查，编码器随后进行编码。",
+    "rule": "RULE-LEX-02",
+    "expect": false,
+    "why": "码表是第一分句的检查对象，编码是另一执行者的动作。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-mor-error-type",
+    "text": "监测器对失败请求进行编码错误分类。",
+    "rule": "RULE-LEX-02",
+    "expect": false,
+    "why": "「编码错误」是被分类的错误类型。句子指示执行分类。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-syn-complete",
+    "text": "步骤：\n执行者：发布进程\n动作：校验数字签名。",
+    "rule": "RULE-REF-01",
+    "expect": false,
+    "why": "步骤块明确提供非空执行者和非空动作。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-syn-condition",
+    "text": "步骤：\n条件：主节点不可用。\n执行者：故障控制器\n动作：暂停外部写入。",
+    "rule": "RULE-REF-01",
+    "expect": false,
+    "why": "可选条件在前。执行者和动作都出现在当前块内。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-syn-empty-action",
+    "text": "步骤：\n执行者：备份进程\n动作：",
+    "rule": "RULE-REF-01",
+    "expect": true,
+    "why": "动作字段存在但没有内容。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-syn-implicit-actor",
+    "text": "步骤：\n操作员已登录终端。\n动作：检查摘要。",
+    "rule": "RULE-REF-01",
+    "expect": true,
+    "why": "上下文提到操作员，但步骤块缺少显式执行者字段。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-syn-implicit-procedure",
+    "text": "恢复会话时，首先确认主节点状态。\n动作：校验签名。",
+    "rule": "RULE-REF-01",
+    "expect": false,
+    "why": "文本未声明步骤块。零散的动作标签不触发此结构规则。",
+    "kind": "synthetic"
+  },
+  {
+    "id": "holdout-syn-fenced-example",
+    "text": "操作手册中的字段示例如下。\n```text\n步骤：\n执行者：备份进程\n```\n下文介绍备份调度。",
+    "rule": "RULE-REF-01",
+    "expect": false,
+    "why": "步骤标记位于代码围栏内。正文未声明缺少动作的步骤。",
+    "kind": "synthetic"
+  }
+]

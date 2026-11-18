@@ -1,0 +1,202 @@
+[
+  {
+    "id": "lex-object-straight",
+    "kind": "synthetic",
+    "text": "值班员拷贝配置文件。",
+    "expect": true,
+    "rule": "RULE-LEX-01",
+    "why": "拷贝支配数字对象配置文件。"
+  },
+  {
+    "id": "lex-object-ba",
+    "kind": "synthetic",
+    "text": "把配置文件拷贝到备用目录。",
+    "expect": true,
+    "rule": "RULE-LEX-01",
+    "why": "把字结构中拷贝是复制动作。"
+  },
+  {
+    "id": "lex-quoted-object",
+    "kind": "synthetic",
+    "text": "操作员拷贝名为“运行记录”的文件。",
+    "expect": true,
+    "rule": "RULE-LEX-01",
+    "why": "引文是文件名，拷贝在引文外。"
+  },
+  {
+    "id": "lex-code-object",
+    "kind": "synthetic",
+    "text": "操作员拷贝 `config.yaml`。",
+    "expect": true,
+    "rule": "RULE-LEX-01",
+    "why": "行内代码是数字对象，拷贝在代码外。"
+  },
+  {
+    "id": "lex-labelled-command",
+    "kind": "synthetic",
+    "text": "- 拷贝响应体。",
+    "expect": true,
+    "rule": "RULE-LEX-01",
+    "why": "Markdown 列表中的祈使动作。"
+  },
+  {
+    "id": "lex-past-action",
+    "kind": "synthetic",
+    "text": "控制器已拷贝元数据。",
+    "expect": true,
+    "rule": "RULE-LEX-01",
+    "why": "已修饰完成的复制动作。"
+  },
+  {
+    "id": "lex-nominal-multiple",
+    "kind": "synthetic",
+    "text": "服务器保留两个拷贝。",
+    "expect": false,
+    "rule": "RULE-LEX-01",
+    "why": "拷贝作为数量短语中的名词。"
+  },
+  {
+    "id": "lex-nominal-object",
+    "kind": "synthetic",
+    "text": "比较本地拷贝和远程拷贝。",
+    "expect": false,
+    "rule": "RULE-LEX-01",
+    "why": "两个拷贝都表示比较对象。"
+  },
+  {
+    "id": "lex-subsystem-name",
+    "kind": "synthetic",
+    "text": "将日志发送到拷贝管理服务。",
+    "expect": false,
+    "rule": "RULE-LEX-01",
+    "why": "拷贝是子系统名的一部分。"
+  },
+  {
+    "id": "lex-explanatory-quote",
+    "kind": "synthetic",
+    "text": "术语表把「拷贝日志」列为待讨论的说法。",
+    "expect": false,
+    "rule": "RULE-LEX-01",
+    "why": "引文展示语言例子。"
+  },
+  {
+    "id": "lex-fenced-example",
+    "kind": "synthetic",
+    "text": "```text\n操作员拷贝配置文件。\n```",
+    "expect": false,
+    "rule": "RULE-LEX-01",
+    "why": "整段是代码围栏中的样例。"
+  },
+  {
+    "id": "lex-inline-code-label",
+    "kind": "synthetic",
+    "text": "将按钮标签设为 `拷贝报告`。",
+    "expect": false,
+    "rule": "RULE-LEX-01",
+    "why": "拷贝只在界面文字示例中。"
+  },
+  {
+    "id": "lex-sentence-boundary",
+    "kind": "synthetic",
+    "text": "生成备份的拷贝。配置文件留在原目录。",
+    "expect": false,
+    "rule": "RULE-LEX-01",
+    "why": "第一句的拷贝是生成对象。下一句不会为它提供宾语。"
+  },
+  {
+    "id": "mor-simple",
+    "kind": "synthetic",
+    "text": "工程师对响应体进行编码。",
+    "expect": true,
+    "rule": "RULE-LEX-02",
+    "why": "对引出受事，进行是虚化动词。"
+  },
+  {
+    "id": "mor-code-object",
+    "kind": "synthetic",
+    "text": "网关对 `request.body` 进行编码。",
+    "expect": true,
+    "rule": "RULE-LEX-02",
+    "why": "代码是受事名称，虚化结构位于正文。"
+  },
+  {
+    "id": "mor-quoted-object",
+    "kind": "synthetic",
+    "text": "网关对“原始响应”进行编码。",
+    "expect": true,
+    "rule": "RULE-LEX-02",
+    "why": "引文是受事标签，虚化结构位于正文。"
+  },
+  {
+    "id": "mor-condition",
+    "kind": "synthetic",
+    "text": "如果启用新协议，则服务端对负载进行编码。",
+    "expect": true,
+    "rule": "RULE-LEX-02",
+    "why": "条件后的主句包含目标结构。"
+  },
+  {
+    "id": "mor-numbered",
+    "kind": "synthetic",
+    "text": "2. 对负载进行编码。",
+    "expect": true,
+    "rule": "RULE-LEX-02",
+    "why": "列表项有完整目标结构。"
+  },
+  {
+    "id": "mor-real-progress",
+    "kind": "synthetic",
+    "text": "编码工作正在进行。",
+    "expect": false,
+    "rule": "RULE-LEX-02",
+    "why": "进行表示工作处于持续状态。"
+  },
+  {
+    "id": "mor-other-verb",
+    "kind": "synthetic",
+    "text": "客户端对负载进行校验。",
+    "expect": false,
+    "rule": "RULE-LEX-02",
+    "why": "校验不在本规则限定范围。"
+  },
+  {
+    "id": "mor-nominal-test",
+    "kind": "synthetic",
+    "text": "工程师对编码配置进行测试。",
+    "expect": false,
+    "rule": "RULE-LEX-02",
+    "why": "编码限定配置，虚化动作是测试。"
+  },
+  {
+    "id": "mor-quote-example",
+    "kind": "synthetic",
+    "text": "规则文档把「对响应体进行编码」列为反例。",
+    "expect": false,
+    "rule": "RULE-LEX-02",
+    "why": "目标结构只在说明性引文内。"
+  },
+  {
+    "id": "mor-fenced-example",
+    "kind": "synthetic",
+    "text": "~~~text\n对响应体进行编码。\n~~~",
+    "expect": false,
+    "rule": "RULE-LEX-02",
+    "why": "目标结构只在围栏内。"
+  },
+  {
+    "id": "mor-sentence-boundary",
+    "kind": "synthetic",
+    "text": "控制模块负责对时。进行编码的模块已停机。",
+    "expect": false,
+    "rule": "RULE-LEX-02",
+    "why": "对时是完整动作。进行编码在下一句。"
+  },
+  {
+    "id": "mor-clause-boundary",
+    "kind": "synthetic",
+    "text": "接口对内开放，进行编码的节点保持离线。",
+    "expect": false,
+    "rule": "RULE-LEX-02",
+    "why": "对内开放和进行编码属于不同分句。"
+  }
+]

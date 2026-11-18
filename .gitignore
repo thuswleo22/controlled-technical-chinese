@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+corpus/*_external.json
+corpus/kubernetes_v134.json
+corpus/tidb_status_contexts.json
+*.udpipe
+results/kubernetes_baseline.json
+results/mdn_baseline.json

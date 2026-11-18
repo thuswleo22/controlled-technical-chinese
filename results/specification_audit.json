@@ -1,0 +1,82 @@
+{
+  "rule_count": 9,
+  "automated_rules": 9,
+  "automated_rule_fraction": 1.0,
+  "approved_lexicon_entries": 166,
+  "pending_lexicon_entries": 0,
+  "specification_diagnostics": 0,
+  "rules": [
+    {
+      "rule": "RULE-LEX-01",
+      "bad_example_codes": [
+        "RULE-LEX-01"
+      ],
+      "good_example_codes": [],
+      "automated": true
+    },
+    {
+      "rule": "RULE-LEX-02",
+      "bad_example_codes": [
+        "RULE-LEX-02"
+      ],
+      "good_example_codes": [],
+      "automated": true
+    },
+    {
+      "rule": "RULE-REF-01",
+      "bad_example_codes": [
+        "RULE-REF-01"
+      ],
+      "good_example_codes": [],
+      "automated": true
+    },
+    {
+      "rule": "RULE-REF-02",
+      "bad_example_codes": [
+        "RULE-REF-02"
+      ],
+      "good_example_codes": [],
+      "automated": true
+    },
+    {
+      "rule": "RULE-LOG-01",
+      "bad_example_codes": [
+        "RULE-LOG-01"
+      ],
+      "good_example_codes": [],
+      "automated": true
+    },
+    {
+      "rule": "RULE-LOG-02",
+      "bad_example_codes": [
+        "RULE-LOG-02"
+      ],
+      "good_example_codes": [],
+      "automated": true
+    },
+    {
+      "rule": "RULE-MOD-01",
+      "bad_example_codes": [
+        "RULE-MOD-01"
+      ],
+      "good_example_codes": [],
+      "automated": true
+    },
+    {
+      "rule": "RULE-QNT-01",
+      "bad_example_codes": [
+        "RULE-QNT-01"
+      ],
+      "good_example_codes": [],
+      "automated": true
+    },
+    {
+      "rule": "RULE-DOC-01",
+      "bad_example_codes": [
+        "RULE-DOC-01"
+      ],
+      "good_example_codes": [],
+      "automated": true
+    }
+  ]
+}
