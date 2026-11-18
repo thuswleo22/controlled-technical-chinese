@@ -7,8 +7,10 @@ permissions:
 
 jobs:
   reproduce:
-    runs-on: ubuntu-latest
+    # The setup-python manifest offers both supported versions on Ubuntu 24.04.
+    runs-on: ubuntu-24.04
     strategy:
+      fail-fast: false
       matrix:
         python-version: ['3.9', '3.12']
     steps:
